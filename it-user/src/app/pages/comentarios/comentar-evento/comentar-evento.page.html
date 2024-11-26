@@ -1,0 +1,25 @@
+<ion-header [translucent]="true">
+  <ion-toolbar color="primary">
+    <ion-title style="color: white;">Comentar Evento</ion-title>
+    <ion-buttons slot="end">
+      <ion-button style="color: white;" (click)="regresar()">
+        Regresar
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content color="dark" [fullscreen]="true">
+  <ion-list *ngIf="comentarios.length > 0">
+    <ion-item color="dark" *ngFor="let comentario of comentarios">
+      <ion-label>
+        <h2>{{ comentario.email}}</h2>
+        <p>{{ comentario.texto }}</p>
+      </ion-label>
+    </ion-item>
+  </ion-list>
+
+  <ion-item *ngIf="comentarios.length === 0">
+    <ion-label>No hay comentarios para este evento.</ion-label>
+  </ion-item>
+</ion-content>

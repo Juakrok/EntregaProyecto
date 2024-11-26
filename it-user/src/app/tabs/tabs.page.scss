@@ -1,0 +1,36 @@
+menu {
+    background-color: #1b1b1b; 
+  }
+  
+  .menu-item {
+    color: white;
+    --background: transparent; 
+    --border-radius: 10px;
+    transition: background 0.3s ease;
+  
+    &:hover {
+      --background: rgba(255, 255, 255, 0.1); 
+    }
+  }
+  
+  ion-toolbar {
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2); 
+    border-bottom: 2px solid rgba(255, 255, 255, 0.2);
+  }
+  
+  ion-tabs {
+    background-color: #1b1b1b; 
+  }
+  
+  ion-tab-bar {
+    background-color: #1b1b1b; 
+    
+    ion-tab-button {
+      color: white; 
+      
+      &:hover {
+        color: #ffcc00; 
+      }
+    }
+  }
+  

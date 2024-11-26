@@ -1,0 +1,34 @@
+.event-card {
+    margin: 10px;
+    padding: 20px;
+  
+    ion-label {
+      text-align: center; // Centra el texto dentro del card
+      h2 {
+        font-weight: bold;
+        margin-bottom: 5px; // Espacio entre el título y los párrafos
+      }
+      p {
+        margin: 0; // Elimina el margen por defecto
+      }
+    }
+  
+    .button-container {
+      display: flex;
+      justify-content: center; // Centra los botones
+      margin-top: 15px; // Espacio entre la información y los botones
+  
+      ion-button {
+        margin: 0 5px; // Espacio horizontal entre los botones
+      }
+    }
+  }
+  
+  // Estilo para el mensaje de no hay eventos
+  ion-item {
+    ion-label {
+      text-align: center; // Centra el mensaje
+    }
+  }
+
+  
