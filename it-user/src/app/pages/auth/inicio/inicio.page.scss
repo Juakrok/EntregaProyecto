@@ -1,0 +1,33 @@
+:root {
+    --primary-color: #4A90E2; /* Cambia este valor por tu color primario */
+    --white-color: #ffffff;
+  }
+  
+  .centered-form {
+    display: grid;
+    justify-content: center;
+    gap: 15px;
+    margin-top: 50px;
+  }
+  
+  #alerta {
+    color: red;
+    font-size: 12px;
+    width: 100%;
+  }
+  
+  
+  
+  .register-link {
+    margin-top: 15px;
+  
+    .register-text {
+      cursor: pointer;
+      text-decoration: underline;
+  
+      &:hover {
+        color: #3a78c2; /* Color más oscuro sin usar darken() */
+      }
+    }
+  }
+  

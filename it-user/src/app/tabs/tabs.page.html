@@ -1,0 +1,53 @@
+<ion-menu style="color: white;" side="end" menu-id="first" content-id="main-content">
+  <ion-header>
+    <ion-toolbar mode=ios color="primary" >
+      <ion-title style="color: white; font-size: 15px;">Ajustes</ion-title>
+    </ion-toolbar>
+  </ion-header>
+  <ion-content style="background-color: #1F1F1F;">
+    <ion-list style="background-color: #1F1F1F;">
+      <ion-item style="background-color: #1F1F1F;" button href="/perfil">
+        <ion-icon style="color: white;" slot="start" name="person-circle-outline"></ion-icon>
+        <ion-label style="color: white;">Mi Perfil</ion-label>
+      </ion-item>
+      <ion-item style="background-color: #1F1F1F;" button (click)="logout()">
+        <ion-icon style="color: white;" slot="start" name="log-out-outline"></ion-icon>
+      <ion-label style="color: white;">Cerrar Sesión</ion-label>
+      </ion-item>
+    </ion-list>
+  </ion-content>
+</ion-menu>
+
+<ion-content id="main-content">
+  <ion-header>
+    <ion-toolbar color="primary">
+      <ion-title style="color: white; text-align: center;">IT-Event</ion-title>
+      <ion-buttons slot="end">
+        <ion-menu-button menu="first">
+          <ion-icon style="color: white;" name="menu-outline"></ion-icon>
+        </ion-menu-button>
+      </ion-buttons>
+    </ion-toolbar>
+  </ion-header>
+
+  <ion-tabs>
+    <ion-tab-bar style="background-color: #1F1F1F;" slot="bottom">
+      <ion-tab-button  tab="tab1" href="/tabs/tab1">
+        <ion-icon aria-hidden="true" name="home-outline"></ion-icon>
+        <ion-label style="color: white;" color="light">Home</ion-label>
+      </ion-tab-button>
+
+      <ion-tab-button tab="tab2" href="/tabs/tab2">
+        <ion-icon aria-hidden="true" name="calendar-outline" ></ion-icon>
+        <ion-label style="color: white;" color="light">Eventos</ion-label>
+      </ion-tab-button>
+
+      <ion-tab-button tab="tab3" href="/tabs/tab3">
+        <ion-icon aria-hidden="true" name="calendar-outline" ></ion-icon>
+        <ion-label style="color: white;" color="light">Participaciones</ion-label>
+      </ion-tab-button>
+      
+      
+    </ion-tab-bar>
+  </ion-tabs>
+</ion-content>

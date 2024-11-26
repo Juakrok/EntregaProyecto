@@ -1,0 +1,7 @@
+{
+  "name": "it-event-user",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}

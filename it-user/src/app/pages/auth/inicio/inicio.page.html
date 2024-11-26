@@ -1,0 +1,64 @@
+<ion-header color="white">
+  <ion-toolbar color="primary">
+    <ion-title mode="ios" style="text-align: center; color: white;">Inicio sesion</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content style="background-color: #1F1F1F;" [fullscreen]="true" class="ion-text-center">
+  <form [formGroup]="loginForm" class="centered-form">
+    <ion-item style=" background-color: #1F1F1F; border-radius: 15px; border: solid 1px white;">
+      <ion-input  type="email" placeholder="Ingrese correo electronico..."  label="Correo:" labelPlacement="floating"
+        formControlName="email">
+      </ion-input>
+    </ion-item>
+
+    <div id="alerta" *ngIf="loginForm.get('email')?.invalid && (loginForm.get('email')?.dirty || loginForm.get('email')?.touched)">
+      *Campo requerido
+    </div>
+    <div id="alerta" *ngIf="loginForm.get('email')?.hasError('email')">
+      *Correo invalido
+    </div>
+
+    <ion-item style="border-radius: 15px; border: solid 1px white; background-color: #1F1F1F;">
+      <ion-input type="password" placeholder="Ingrese su contraseña..." label="Contraseña: " labelPlacement="floating"
+        formControlName="password"></ion-input>
+    </ion-item>
+
+    <div id="alerta" *ngIf="loginForm.get('password')?.invalid && (loginForm.get('password')?.dirty || loginForm.get('password')?.touched)">
+      *Campo requerido
+    </div>
+    <div id="alerta" *ngIf="loginForm.get('password')?.hasError('minlength')">
+      *La contraseña debe tener al menos 6 caracteres
+    </div>
+
+    <div>
+      <ion-button (click)="login()" expand="block" fill="solid" shape="round" color="primary" [disabled]="loginForm.invalid">
+        <a style="color: white;">Entrar</a>
+      </ion-button>
+    </div>
+
+    <!-- El registro ahora es un texto con enlace -->
+    <div class="register-link">
+      <p>Aun no tienes cuenta? <a (click)="registrar()" class="register-text">Registrarse</a></p>
+    </div>
+  </form>
+</ion-content>
+<ion-footer>
+  <ion-toolbar style="padding: 20px;"  color="primary">
+      <ion-title style="text-align: center; color:  white; margin-top: -20px; ">IT-Event-User</ion-title>
+    <div style="text-align: center; margin-top: 35px;">
+      <ion-button  color="light" fill="clear" href="https://www.facebook.com/tu_pagina" target="_blank">
+        <ion-icon style="color: white;" slot="icon-only" name="logo-facebook"></ion-icon>
+      </ion-button>
+      <ion-button color="light" fill="clear" href="https://www.twitter.com/tu_pagina" target="_blank">
+        <ion-icon style="color: white;" slot="icon-only" name="logo-twitter"></ion-icon>
+      </ion-button>
+      <ion-button color="light" fill="clear" href="https://www.instagram.com/tu_pagina" target="_blank">
+        <ion-icon style="color: white;" slot="icon-only" name="logo-instagram"></ion-icon>
+      </ion-button>
+      <ion-button color="light" fill="clear" href="https://www.linkedin.com/tu_pagina" target="_blank">
+        <ion-icon style="color: white;" slot="icon-only" name="logo-linkedin"></ion-icon>
+      </ion-button>
+    </div>
+  </ion-toolbar>
+</ion-footer>
