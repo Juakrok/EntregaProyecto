@@ -1,0 +1,31 @@
+#contenedor_btn{
+    display: flex;
+    justify-content: center;
+}
+
+#i-card{
+    justify-content: center;
+    align-items: center;
+    margin-top: 120px;
+    max-height: 350px;
+    height: 100%;
+}
+#i-header{
+    text-align: center;
+}
+#i-title{
+    text-align: center;
+    font-size: 20px;
+    color: white;
+}
+#i-btn{
+    color: white;
+    background-color: #1F316F;
+    border-radius: 20px;
+}
+#contenedor_a{
+    display: flex;
+    justify-content: center;
+    margin-top: 10px;
+}
+

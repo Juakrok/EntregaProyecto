@@ -1,0 +1,25 @@
+<ion-header [translucent]="true">
+  <ion-toolbar color="primary">
+    <ion-title style="text-align: center; color: white;">IT-Event-Scan+</ion-title>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/tabs/tab2" mode="ios" text="" color="light"></ion-back-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content color="dark" [fullscreen]="true">
+  <ion-card color="dark" style="max-height: 400px; height: 100%; max-width: 400px; margin-top: 120px; border: solid 2px grey;">
+    <ion-card-content>
+      <ion-grid fixed>
+        <ion-row>
+          <ion-col size="12">
+            <ion-button (click)="leerQr()" expand="block" fill="clear" shape="round">
+              Camara
+            </ion-button>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+
+    </ion-card-content>
+  </ion-card>
+</ion-content>

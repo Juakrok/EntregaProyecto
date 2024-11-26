@@ -1,0 +1,32 @@
+<ion-header [translucent]="true">
+  <ion-toolbar color="primary">
+    <ion-title style="text-align: center; color: white; font-size: 15px;">Eventos disponibles al usuario</ion-title>
+      <ion-buttons slot="end">
+        <ion-button (click)="mostrarMenu()">
+          <ion-icon slot="end" color="light" name="menu-outline"></ion-icon>
+        </ion-button>
+      </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content style="background-color: #121212!important;" [fullscreen]="true">
+ 
+  <ion-list>
+    <ion-item *ngFor="let e of eventos" (click)="buscarEvento(e)">
+      <ion-card style="background-color: #1F1F1F; border-radius: 15px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);">
+        <ion-card-header style="text-align: center; padding: 10px;">
+          <ion-card-title style="font-size: 20px; color: white;">{{e.nombre}}</ion-card-title>
+        </ion-card-header>
+        <ion-card-content style="text-align: center;">
+          <ion-img class="evento-img" [src]="e.imagen"></ion-img>
+          
+          <p style="color: white;">Descripción: {{e.descripcion}}</p>
+          <p style="color: white;">Fecha: {{e.fecha}}</p>
+          <p style="color: white;">Lugar: {{e.lugar}}</p>
+        </ion-card-content>
+      </ion-card>
+    </ion-item>
+  </ion-list>
+
+  <app-explore-container name="Tab 1 page"></app-explore-container>
+</ion-content>

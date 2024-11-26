@@ -1,0 +1,42 @@
+<ion-header [translucent]="true">
+  <ion-toolbar color="primary">
+    <ion-title style="text-align: center; color: white;">Detalle de asistentes</ion-title>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/events" mode="ios" text="" color="light"></ion-back-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content color="dark" [fullscreen]="true">
+  <ion-card color="dark" style="border: solid 2px grey; padding: 10px;" mode="ios" >
+    <ion-card-header>
+      <ion-card-title style="text-align: center; color: white;" >Asistencia a evento </ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      
+        <ion-item color="dark">
+          <ion-label style="color: white;" position="floating">Nombre</ion-label>
+          <br>
+          <ion-input style="color: white;" type="text" value="Juan Perez"></ion-input>
+        </ion-item>
+        <ion-item color="dark">
+          <ion-label style="color: white;" position="floating">Correo</ion-label>
+          <br>
+          <ion-input style="color: white;" type="email" value="Juan123@gmail.com"></ion-input>
+        </ion-item>
+        <ion-item color="dark">
+          <ion-label style="color: white;" position="floating">Usuario</ion-label>
+          <br>
+          <ion-input style="color: white;" type="text" value="Juan123"></ion-input>
+        </ion-item>
+        <ion-item color="dark">
+          <ion-label style="color: white;">Asistira a evento 1</ion-label>
+        </ion-item>
+        <ion-item color="dark">
+          <ion-label style="color: white;">Hora de Evento</ion-label>
+        </ion-item>
+        
+      
+    </ion-card-content>
+  </ion-card>
+</ion-content>

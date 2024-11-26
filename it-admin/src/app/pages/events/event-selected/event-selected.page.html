@@ -1,0 +1,41 @@
+<ion-header  [translucent]="true">
+  <ion-toolbar color="primary" mode="ios">
+    <ion-title style="text-align: center; color: white; ">Detalle de evento</ion-title>
+    <ion-buttons>
+      <ion-back-button defaultHref="/tabs/tab1" mode="ios" text="" color="light" ></ion-back-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content color="dark" [fullscreen]="true">
+  <ion-card color="dark" style="border: solid 2px grey; padding: 10px;" mode="ios">
+    <ion-img src="../../../../assets/img/convocatoria1.jpg"></ion-img>
+    <p style="text-align: center; color: white;">Sé parte del: 1er congreso de investigación, innovación y transferencia desde la Educación TP, donde se presentarán premisas originales e innovadoras que contribuyan al enriquecimiento del conocimiento en sus respectivos campos.
+      La invitación es para este jueves 16 de mayo, entre las 8:30 AM y las 17:45 PM, en dependencias de Casa Central de Duoc UC, ubicada en Av. Eliodoro Yáñez 1595 en la comuna de Providencia.</p>
+    <ion-card-header >
+      <ion-card-title  style="font-size: 14px; text-align: center; color: white;">
+        1er congreso de investigación
+      </ion-card-title>
+      <br>
+      <ion-item color="dark" button (click)="abrirCalendario()">
+        <ion-label color="light" >Fecha del evento : {{fechaSeleccionada ? fechaSeleccionada : 'Seleccionar Fecha'}}</ion-label>
+        <ion-icon color="light" name="calendar" slot="end"></ion-icon>
+      </ion-item>
+    </ion-card-header>
+    <ion-card-content >
+      <ion-datetime mode="ios" color="dark"
+        *ngIf="mostrarCalendario"
+        [(ngModel)]="fechaSeleccionada"
+        (ionCancel)="cerrarCalendario()"
+        (ionChange)="cerrarCalendario()"
+        displayFormat="DD/MM/YYYY"
+        cancelText="Cancelar"
+        doneText="Hecho"
+        style="width: 100%; margin-top: 10px;">
+      </ion-datetime>
+      <ion-button mode="ios" fill="outline" expand="full" color="success" (click)="agendarEvento()" style="margin-top: 20px;">
+        Agendar evento
+      </ion-button>
+    </ion-card-content>
+  </ion-card>
+</ion-content>

@@ -1,0 +1,7 @@
+{
+  "name": "IT-Event-Admin",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}

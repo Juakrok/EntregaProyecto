@@ -1,0 +1,44 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-title style="color: white;">Perfil</ion-title>
+    <ion-buttons slot="end">
+      <ion-button style="color: white;" (click)="regresar()" slot="end" expand="block" fill="clear" shape="round">
+        Regresar
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-card *ngIf="admin">
+    <div class="profile-container">
+      <div class="profile-header">
+        <ion-avatar class="profile-avatar">
+          <img [src]="admin.imagen || 'assets/img/default-image-user.webp' " alt="Avatar" />
+        </ion-avatar>
+        <h2>{{admin.nombre}}</h2>
+      </div>
+  
+      <ion-list lines="none">
+        <ion-item>
+          <ion-label position="floating">Nombre</ion-label>
+          <ion-input value="{{admin.nombre}}"></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-label position="floating">RUT</ion-label>
+          <ion-input value="{{admin.rut}}"></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-label position="floating">Correo</ion-label>
+          <ion-input value="{{admin.email}}"></ion-input>
+        </ion-item>
+      </ion-list>
+  
+      <ion-button expand="block" color="primary" class="next-button" [routerLink]="'/editar'">
+        <p style="color: white;">Editar Perfil</p>
+      </ion-button>
+    </div>
+
+  </ion-card>
+  
+</ion-content>

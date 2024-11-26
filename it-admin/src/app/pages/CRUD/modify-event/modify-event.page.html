@@ -1,0 +1,39 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-buttons slot="start">
+      <ion-button (click)="goBack()" fill="clear">
+        <ion-icon name="arrow-back" color="white"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+    <ion-title>Modificar Evento</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <form>
+    <ion-card>
+      <img [src]="event.imagen || 'assets/default-event-image.png'" alt="Imagen del evento" style="width: 100%; height: auto; border-radius: 10px;">
+      
+      <input type="file" accept="image/*" (change)="onImageSelected($event)" style="display: none;" #fileInput>
+      <ion-button (click)="fileInput.click()" fill="outline" shape="round">Cambiar Imagen del Evento</ion-button>
+    </ion-card>
+
+    <ion-item>
+      <ion-input type="text" placeholder="Nombre" [(ngModel)]="event.nombre" name="nombre" label="Nombre" labelPlacement="floating" class="no-border-input"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-textarea placeholder="Descripción" [(ngModel)]="event.descripcion" name="descripcion" label="Descripción" labelPlacement="floating" class="no-border-input"></ion-textarea>
+    </ion-item>
+
+    <ion-item>
+      <ion-input type="text" placeholder="Fecha del evento" [(ngModel)]="event.fecha" name="fecha" label="Fecha del evento" labelPlacement="floating" class="no-border-input"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-input type="text" placeholder="Lugar del evento" [(ngModel)]="event.lugar" name="lugar" label="Lugar del evento" labelPlacement="floating" class="no-border-input"></ion-input>
+    </ion-item>
+
+    <ion-button (click)="modifyEvent()" expand="block" fill="clear" shape="round">Guardar Cambios</ion-button>
+  </form>
+</ion-content>
