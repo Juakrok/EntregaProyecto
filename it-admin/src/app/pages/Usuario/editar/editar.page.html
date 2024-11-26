@@ -1,0 +1,48 @@
+<ion-header>
+  <ion-toolbar color="primary">
+   
+    <ion-buttons slot="end">
+      <ion-button style="color: white;" slot="end" (click)="regresar()"  shape="round">
+        Regresar
+      </ion-button>
+    </ion-buttons>
+    <ion-title style="color: white;">Editar Usuario</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content color="dark" >
+  <div style="display: flex; justify-content:center ; align-items: center; margin-top: 120px;">
+    <form [formGroup]="editForm" (ngSubmit)="onSubmit()">
+    
+      <ion-item>
+        <ion-label position="floating"></ion-label>
+        <ion-input formControlName="name" placeholder="Ingresa tu nombre"></ion-input>
+      </ion-item>
+
+    
+      <ion-item>
+        <ion-label position="floating">Correo Electrónico</ion-label>
+        <ion-input formControlName="email" type="email" placeholder="correo@ejemplo.com"></ion-input>
+      </ion-item>
+
+   
+      
+
+   
+      <ion-item>
+        <ion-label position="floating">Imagen</ion-label>
+        <ion-input type="file" (change)="onFileChange($event)" accept="image/*"></ion-input>
+      </ion-item>
+
+  
+      <ion-item *ngIf="imagePreview">
+        <ion-img [src]="imagePreview" alt="Vista previa de la imagen"></ion-img>
+      </ion-item>
+
+   
+      <ion-button expand="full" type="submit" [disabled]="editForm.invalid">
+       Guardar
+      </ion-button>
+    </form>
+  </div>
+</ion-content>

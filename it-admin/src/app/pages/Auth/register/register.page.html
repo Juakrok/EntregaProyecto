@@ -1,0 +1,64 @@
+<ion-header [translucent]="true">
+  <ion-toolbar color="primary">
+    <ion-title style="text-align: center; color: white;">Registro de usuario</ion-title>
+    
+  </ion-toolbar>
+</ion-header>
+
+<ion-content color="dark" [fullscreen]="true">
+  <ion-card color="dark" mode="ios" id="i-card" style="padding-bottom: 15px; border: solid 2px grey;">
+    <ion-card-header>
+      <ion-card-title style="color: white; text-align: center;">Registro de usuario</ion-card-title>
+    </ion-card-header>
+      <form [formGroup]="registroForm"  >
+        <ion-item color="dark">
+          <ion-input style="color: white;" type="text" label="Nombre:" formControlName="nombre"
+           labelPlacement="floating" placeholder="Ingrese su nombre..."></ion-input>
+        </ion-item>
+
+        <div id="alerta" *ngIf="registroForm.get('nombre')?.invalid && (registroForm.get('nombre')?.dirty || 
+        registroForm.get('nombre')?.touched)">
+          <div style="color: white;" *ngIf="registroForm.get('nombre')?.hasError('required')">*Nombre es obligatorio</div>
+          <div style="color: white;" *ngIf="registroForm.get('nombre')?.hasError('minlength')">*Nombre debe tener minimo de 3 caracteres</div>
+          <div style="color: white;" *ngIf="registroForm.get('nombre')?.hasError('invalidCharacters')">*El nombre solo puede contener letras y espacios</div>
+        </div>
+
+        <ion-item color="dark">
+          <ion-input style="color: white;" label="Correo electronico: " type="email" formControlName="email" 
+          labelPlacement="floating" placeholder="Ingrese su correo electronico..."></ion-input>
+        </ion-item>
+        
+        <div id="alerta" *ngIf="registroForm.get('email')?.invalid && (registroForm.get('email')?.dirty || registroForm.get('email')?.touched)">
+          <div style="color: white;" *ngIf="registroForm.get('email')?.hasError('required')">*Email es obligatorio</div>
+          <div style="color: white;" *ngIf="registroForm.get('email')?.hasError('email')">*Email no es válido</div>
+        </div>
+
+        <ion-item color="dark">
+          <ion-input style="color: white;" name="rut" label="rut: " type="text" formControlName="rut" labelPlacement="floating" 
+          placeholder="Ingrese su rut..."></ion-input>
+        </ion-item>
+
+        <div id="alerta" *ngIf="registroForm.get('rut')?.invalid && (registroForm.get('rut')?.dirty || registroForm.get('rut')?.touched)">
+          <div style="color: white;" *ngIf="registroForm.get('rut')?.hasError('required')">*Rut es obligatorio</div>
+          <div style="color: white;" *ngIf="registroForm.get('rut')?.hasError('validaRut')">*El rut es invalido</div>
+        </div>
+        
+
+        <ion-item color="dark">
+          <ion-input style="color: white; font-size: 15px; " name="Password" label="Contraseña: " type="password" labelPlacement="floating"
+           placeholder="Ingrese su contraseña..." formControlName="password">
+            <ion-input-password-toggle slot="end"></ion-input-password-toggle>
+          </ion-input>
+        </ion-item>
+
+
+        <div id="contenedor_btn">
+          <ion-button (click)="crearUsuario()" style="color: white;" >Registrar usuario</ion-button>
+        </div>
+        <div id="contenedor_a">
+          <a id="a-link" routerLink="/login">¿Ya tienes cuenta? Inicia sesion</a>
+        </div>
+    </form>
+
+  </ion-card>
+</ion-content>

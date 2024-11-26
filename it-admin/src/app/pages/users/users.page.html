@@ -1,0 +1,19 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-buttons slot="end">
+      <ion-button style="color: white;" slot="end" (click)="regresar()" expand="block" fill="clear" shape="round">
+        Regresar
+      </ion-button>
+    </ion-buttons>
+    
+    <ion-title style="color: white;">Usuarios</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-list>
+    <ion-item *ngFor="let usuario of usuarios" (click)="openUser(usuario.rut)">
+      <p style="font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;">Nombre: {{usuario.nombre}} <br> Correo: {{usuario.email}} <br> Rut: {{usuario.rut}}</p>
+    </ion-item>
+  </ion-list>
+</ion-content>

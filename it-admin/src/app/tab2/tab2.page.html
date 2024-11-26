@@ -1,0 +1,34 @@
+<ion-header [translucent]="true">
+  <ion-toolbar color="primary">
+    <ion-title style="text-align: center; color: white; font-size: 15px;">QRCode</ion-title>
+      <ion-buttons slot="end">
+        <ion-button (click)="mostrarMenu()">
+          <ion-icon slot="end" name="menu-outline" style="color: white;"></ion-icon>
+        </ion-button>
+      </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content color="dark" [fullscreen]="true">
+  
+  <ion-card color="dark" style="border: solid 2px grey;" mode="ios">
+    <ion-card-header>
+      <ion-card-title style="color: white; text-align: center;">Lector de eventos</ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      <ion-button href="/scan-qr" expand="block" fill="outline" color="success" >
+        <ion-icon slot="start" name="qr-code-outline"></ion-icon>
+        Escanear QR
+      </ion-button>
+      <br>  
+      <p style="text-align: center; color: white;">Aqui se mostrara tu codigo qr como asistente o administrador</p>
+      <div id="i-item">
+        <img src="../../assets/img/QrCodePrueba.jpg" style="max-height: 200px; height: 100%;">
+      </div>
+      
+
+    </ion-card-content>
+  </ion-card>
+
+  <app-explore-container name="Tab 2 page"></app-explore-container>
+</ion-content>

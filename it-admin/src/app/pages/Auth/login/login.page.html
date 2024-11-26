@@ -1,0 +1,69 @@
+<ion-header [translucent]="true">
+  <ion-toolbar color="primary">
+    <ion-title style="text-align: center; color: white;">Bienvenido a IT-Event-Admin</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content mode="ios" style="background-color: #121212!important;" [fullscreen]="true">
+  
+  <ion-card color="dark">
+    <form [formGroup]="loginForm">
+      <ion-item color="dark">
+        <ion-input style="color: white;" type="email" placeholder="Ingrese correo electronico..."
+        formControlName="email">
+      </ion-input>
+      </ion-item>
+      
+      <div style="color: red; text-align: center;" id="alerta" *ngIf="loginForm.get('email')?.invalid && (loginForm.get('email')?.dirty || loginForm.get('email')?.touched)">
+        *Campo requerido
+      </div>
+      
+
+      <ion-item color="dark">
+        <ion-input style="color: white;" type="password" placeholder="Ingrese contraseña..."
+        formControlName="password">
+      </ion-input>
+      </ion-item>
+
+      <div style="color: red; text-align: center;" id="alerta" *ngIf="loginForm.get('password')?.invalid && (loginForm.get('password')?.dirty || loginForm.get('password')?.touched)">
+        *Campo requerido
+      </div>
+      <div style="color: red; text-align: center;" id="alerta" *ngIf="loginForm.get('password')?.hasError('minlength')">
+        *La contraseña debe tener al menos 8 caracteres
+      </div>
+
+      <div id="contenedor_a">
+        <a style="text-align: center; margin-top: 10px; margin-bottom: 10px;" id="a-link" routerLink="/forgot-password">¿Olvidaste tu contraseña?</a>
+      </div>
+      <div id="contenedor_btn">
+        <ion-button id="i-btn" (click)="inicioSesion()">Iniciar sesion</ion-button>
+      </div>
+      <div id="contenedor_a">
+        <a id="a-link" routerLink="/register">¿No tienes cuenta? Registrate</a>
+      </div>
+    </form>
+  </ion-card>
+  
+    
+    
+  
+</ion-content>
+<ion-footer>
+  <ion-toolbar style="padding: 20px;"  color="primary">
+    <ion-title style="text-align: center; color:  white;">IT-Event-Admin</ion-title>
+    <div style="text-align: center; margin-top: 35px;">
+      <ion-button color="light" fill="clear" href="https://www.facebook.com/tu_pagina" target="_blank">
+        <ion-icon slot="icon-only" name="logo-facebook"></ion-icon>
+      </ion-button>
+      <ion-button color="light" fill="clear" href="https://www.twitter.com/tu_pagina" target="_blank">
+        <ion-icon slot="icon-only" name="logo-twitter"></ion-icon>
+      </ion-button>
+      <ion-button color="light" fill="clear" href="https://www.instagram.com/tu_pagina" target="_blank">
+        <ion-icon slot="icon-only" name="logo-instagram"></ion-icon>
+      </ion-button>
+      <ion-button color="light" fill="clear" href="https://www.linkedin.com/tu_pagina" target="_blank">
+        <ion-icon slot="icon-only" name="logo-linkedin"></ion-icon>
+      </ion-button>
+    </div>
+  </ion-toolbar>
+</ion-footer>
